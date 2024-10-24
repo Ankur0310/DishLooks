@@ -1,0 +1,273 @@
+/* General page styling */
+.restaurant-page {
+  position: relative; /* Position relative for the pseudo-element */
+  font-family: 'Roboto', sans-serif;
+  background-image: url('https://res.cloudinary.com/cloud0310/image/upload/v1729782721/pexels-cottonbro-4543103_invthr.jpg'); /* Add your background image here */
+  background-size: cover; /* Ensures the background image covers the entire page */
+  background-position: center;
+  background-attachment: fixed; /* This makes the image stay in place as you scroll */
+  min-height: 100vh;
+  color: #fff; /* Change text color to white for visibility */
+  overflow: hidden; /* Hide overflow if necessary */
+}
+
+.restaurant-page::before {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute; /* Position it over the container */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.68); /* Black gradient overlay with 50% opacity */
+  z-index: 1; /* Ensure the overlay is above the background but below the content */
+}
+
+.restaurant-page > * {
+  position: relative; /* Ensure child elements are above the overlay */
+  z-index: 2; /* Bring content above the overlay */
+}
+
+.restaurant-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.restaurant-header {
+  color: white;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.filter-search {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  padding: 10px;
+  width: 60%;
+}
+
+.navbar_buttons{
+  display: flex;
+  width: 20%;
+  justify-content: space-around;
+}
+/* Filter buttons */
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-button {
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-button.veg {
+  background-color: #f0f0f0;
+  color: #4caf50;
+}
+
+.filter-button.non-veg {
+  background-color: #f0f0f0;
+  color: #ff4d4d;
+}
+
+.filter-button.active.veg {
+  background-color: #4caf50;
+  color: white;
+}
+
+.filter-button.active.non-veg {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.filter-button:hover {
+  background-color: #ddd;
+}
+
+/* Dish list styling */
+.dish-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dish-item_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #726c6cc7;
+}
+
+.add-to-cart-button {
+  background-color: rgba(39, 174, 96, 0.8);
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-button {
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-modal-button {
+  background-color: #f0f0f0;
+  color: white;
+  border: black 2px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.icon {
+  width: 20px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.dish-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.dish-details {
+  flex-grow: 1;
+}
+
+.out-of-stock {
+  opacity: 0.5;
+}
+
+.out-of-stock-label {
+  color: red;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Modal Styling */
+.filter-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.filter-modal-content h3 {
+  margin-bottom: 20px;
+}
+
+.filter-modal-content select, .filter-modal-content button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.win-discount-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font: bolder;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.view-cart-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font: bolder;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.filter_popoup_buttons button {
+  background-color: #3498db;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.filter_popoup_buttons button:hover {
+  background-color: #062c46;
+  color: whitesmoke;
+}
+
+
+/* Responsive styling */
+/* Mobile responsive layout for buttons in one row */
+@media (max-width: 768px) {
+  .filter-search {
+    flex-direction: column; /* Align in one row */
+  }
+  .search-bar {
+    padding: 8px;
+    font-size: 14px;
+    width: 95%; /* Adjust width to accommodate buttons */
+    margin-bottom: 8px;
+  }
+
+  .restaurant-header{
+    font-size: larger;
+    margin-bottom: 15px;
+  }
+
+  /* Make Veg/Non-Veg buttons smaller for mobile */
+  .filter-buttons {
+    width: 60%;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .filter-modal-button, .win-discount-button, .view-cart-button {
+    font-size: 18px;
+  }
+  .navbar_buttons {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .filter-buttons {
+    order:1;
+  }
+
+}
+

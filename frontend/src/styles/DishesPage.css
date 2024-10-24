@@ -1,0 +1,140 @@
+.dishes_container {
+    position: relative; /* Position relative for the pseudo-element */
+    font-family: 'Roboto', sans-serif;
+    background-image: url('https://res.cloudinary.com/cloud0310/image/upload/v1729719096/pexels-roman-odintsov-4552131_ag321r.jpg'); /* Add your background image here */
+    background-size: cover; /* Ensures the background image covers the entire page */
+    background-position: center;
+    background-attachment: fixed; /* This makes the image stay in place as you scroll */
+    min-height: 100vh;
+    color: #fff; /* Change text color to white for visibility */
+    overflow: hidden; /* Hide overflow if necessary */
+
+  }
+  
+  .dishes_container::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position it over the container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.68); /* Black gradient overlay with 50% opacity */
+    z-index: 1; /* Ensure the overlay is above the background but below the content */
+  }
+  
+  .dishes_container > * {
+    position: relative; /* Ensure child elements are above the overlay */
+    z-index: 2; /* Bring content above the overlay */
+  }
+
+.existing_dishes{
+    margin: 50px;
+    background-color: rgba(224, 218, 218, 0.842);
+    padding: 25px;
+    border: #000000 2px;
+    border-radius: 5px;
+    color: #000000;
+}
+
+.dishes_heading{
+    color: black;
+    font-weight: bolder;
+    font-size: x-large;
+    margin-bottom: 50px;
+
+}
+
+  .dishes-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .dish-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fffffff3; /* White background for dishes */
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .left_item {
+    display: flex;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .dish-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    align-content: center;
+  }
+  .dish-info {
+    flex-grow: 1; /* Allow this section to take available space */
+    margin-right: 15px; /* Space between info and image */
+  }
+  
+  .dish-name {
+    font-size: 18px;
+    font-weight: 500; /* Slightly bolder for emphasis */
+  }
+  
+  .dish-category {
+    font-size: 14px;
+    color: #777; /* Lighter color for secondary text */
+  }
+  
+  .dish-price {
+    font-size: 16px;
+    font-weight: 700; /* Bold price for emphasis */
+  }
+  
+  .dish_image {
+    width: 50px;
+    height: auto;
+    border-radius: 5px; /* Rounded corners for images */
+    margin-right: 25px;
+  }
+  
+  .dish-actions {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+  }
+  
+  .action-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button {
+    background-color: #e74c3c; /* Red for delete */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .out-of-stock-button {
+    background-color: #3498db; /* Blue for status toggle */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover,
+  .out-of-stock-button:hover {
+    opacity: 0.9; /* Slightly transparent on hover */
+  }
+  
+

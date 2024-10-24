@@ -1,0 +1,55 @@
+/* Popup styles */
+.upload-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  width: 250px;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.upload-button {
+  background-color: rgba(39, 174, 96, 0.8);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.upload-button:hover {
+  background-color: rgba(30, 132, 73, 0.9);
+}
+
+.popup-content input[type="file"] {
+  margin-bottom: 10px;
+}
+.upload-status p {
+  color: black;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  color: #ff5a5a;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.close-button:hover {
+  background-color: #eb8a8a9d;
+}
+
+.status-message{
+  color: black;
+}
