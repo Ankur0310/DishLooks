@@ -17,7 +17,7 @@ function RestaurantPage() {
   useEffect(() => {
     const fetchRestaurant = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/restaurant/${id}`);
+        const response = await axios.get(`https://dishlooks.onrender.com/api/restaurant/${id}`);
         setRestaurant(response.data);
       } catch (error) {
         console.error('Error fetching restaurant:', error);

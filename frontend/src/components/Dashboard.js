@@ -20,7 +20,7 @@ const Dashboard = () => {
         return;
       }
       try {
-        const response = await axios.get(`http://localhost:5000/api/dishes/${restaurantId}`);
+        const response = await axios.get(`https://dishlooks.onrender.com/api/dishes/${restaurantId}`);
         setRestaurant(response.data);
       } catch (error) {
         console.error('Error fetching restaurant details', error);

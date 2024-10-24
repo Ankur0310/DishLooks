@@ -24,7 +24,7 @@ const AddDishForm = ({ restaurantId }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/restaurant/${restaurantId}`);
+        const response = await axios.get(`https://dishlooks.onrender.com/api/restaurant/${restaurantId}`);
         setCategories(response.data.categories || []); // Fetch existing categories from restaurant
       } catch (error) {
         console.error('Error fetching categories:', error);
@@ -56,7 +56,7 @@ const AddDishForm = ({ restaurantId }) => {
   const handleAddDish = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:5000/api/dishes/${restaurantId}/add_dishes`, newDish);
+      const response = await axios.post(`https://dishlooks.onrender.com/api/dishes/${restaurantId}/add_dishes`, newDish);
       setNewDish({
         name: '',
         category: '',
@@ -79,7 +79,7 @@ const AddDishForm = ({ restaurantId }) => {
   const handleAddCategory = async () => {
     if (newCategory && !categories.includes(newCategory)) {
       try {
-        await axios.put(`http://localhost:5000/api/restaurant/${restaurantId}/add_category`, {
+        await axios.put(`https://dishlooks.onrender.com/api/restaurant/${restaurantId}/add_category`, {
           category: newCategory
         });
 

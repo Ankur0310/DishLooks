@@ -11,7 +11,7 @@ const DishesPage = () => {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/dishes/${restaurantId}`);
+        const response = await axios.get(`https://dishlooks.onrender.com/api/dishes/${restaurantId}`);
         setDishes(response.data.dishes);
       } catch (error) {
         console.error('Error fetching dishes', error);
@@ -23,7 +23,7 @@ const DishesPage = () => {
 
   const handleDeleteDish = async (dishId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/dishes/${restaurantId}/dishes/${dishId}`);
+      await axios.delete(`https://dishlooks.onrender.com/api/dishes/${restaurantId}/dishes/${dishId}`);
       setDishes(dishes.filter(dish => dish._id !== dishId));
     } catch (error) {
       console.error('Error deleting dish', error);
@@ -32,7 +32,7 @@ const DishesPage = () => {
 
   const handleToggleOutOfStock = async (dishId, currentStatus) => {
     try {
-      const response = await axios.patch(`http://localhost:5000/api/dishes/${restaurantId}/dishes/${dishId}`, {
+      const response = await axios.patch(`https://dishlooks.onrender.com/api/dishes/${restaurantId}/dishes/${dishId}`, {
         isOutOfStock: !currentStatus
       });
       setDishes(dishes.map(dish => (dish._id === dishId ? response.data : dish)));

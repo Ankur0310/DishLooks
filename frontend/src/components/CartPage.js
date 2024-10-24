@@ -26,7 +26,7 @@ function CartPage() {
       }))
     };
     try {
-      const response = await axios.post('http://localhost:5000/api/order/new', orderDetails);
+      const response = await axios.post('https://dishlooks.onrender.com/api/order/new', orderDetails);
       if (response.status === 200) {
         alert('Order placed successfully!');
         navigate(`/restaurant/${restaurantId}`);

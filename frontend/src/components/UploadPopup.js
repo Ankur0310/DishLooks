@@ -25,7 +25,7 @@ const UploadPopup = ({ restaurantId, togglePopup }) => {
     formData.append('template', selectedFile);
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/restaurant/${restaurantId}/upload-template`, formData, {
+      const response = await axios.post(`https://dishlooks.onrender.com/api/restaurant/${restaurantId}/upload-template`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

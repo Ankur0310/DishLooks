@@ -16,7 +16,7 @@ const DiscountTemplatePage = () => {
     // Fetch the template URL uploaded by the restaurant owner
     const fetchTemplateUrl = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/restaurant/${restaurantId}/template`);
+        const response = await axios.get(`https://dishlooks.onrender.com/api/restaurant/${restaurantId}/template`);
        // setTemplateUrl(response.data.templateUrl);
         setRestaurant(response.data);
       } catch (error) {
@@ -36,7 +36,7 @@ const DiscountTemplatePage = () => {
             <img src="/images/share.jpg" alt="shareit" className="banner_img" />
             <p>Share this story template with your photos on your story and also tag us for getting more Discount.</p>
             {restaurant.templateUrl ? (
-              <a href={`http://localhost:5000${restaurant.templateUrl}`} download>
+              <a href={`https://dishlooks.onrender.com${restaurant.templateUrl}`} download>
                 <button>Download Template</button>
               </a>
             ) : (

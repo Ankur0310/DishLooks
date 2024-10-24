@@ -12,13 +12,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password }, {
-        timeout: 10000,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'http://localhost:3000',
-        }
-      });
+      const response = await axios.post('https://dishlooks.onrender.com/api/auth/login', { email, password });
       const { restaurantId } = response.data;
       if (response.data.success) {
         navigate('/dashboard', { state: { restaurantId } });

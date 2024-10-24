@@ -13,7 +13,7 @@ function Signup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', { email, password, restaurantName }, {
+      const response = await axios.post('https://dishlooks.onrender.com/api/auth/signup', { email, password, restaurantName }, {
         headers: { 'Content-Type': 'application/json' }
       });
       if (response.data.success) {
