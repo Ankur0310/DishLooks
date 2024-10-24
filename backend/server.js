@@ -23,6 +23,10 @@ mongoose.connect(mongoUri, {
   .then(() => console.log('MongoDB connected to Atlas'))
   .catch(err => console.log(err));
 
+app.get('/', (req, res) => {
+  res.redirect('/login');
+});
+
 // Define API routes
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);

@@ -18,6 +18,13 @@
     display: flex;
     flex-direction: column; /* Vertical layout for inputs */
   }
+
+  .error-message {
+    color: red; /* Change to your desired error color */
+    margin-top: 10px; /* Adjust spacing */
+    font-size: 14px; /* Adjust font size as needed */
+  }
+  
   
   .login-input {
     margin-bottom: 15px; /* Space between inputs */
