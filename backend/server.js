@@ -8,11 +8,6 @@ const path = require('path');
 const app = express();
 
 const __dirName = path.resolve();
-
-// CORS setup for development
-app.use(cors({ origin: 'http://localhost:3000' }));
-app.options('*', cors());
-
 app.use(bodyParser.json());
 
 const mongoUri = process.env.MONGO_URI;
